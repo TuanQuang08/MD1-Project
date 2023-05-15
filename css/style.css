@@ -149,8 +149,8 @@ header .myNav .nav-content .my-navitem .myform input{
 .my_container{
     border: 1px solid gray;
     border-radius: 15px;
-    display: grid;
-    grid-template-columns: 75% auto;
+    /*display: grid;*/
+    /*grid-template-columns: 75% auto;*/
     padding: 20px;
     margin: 100px auto;
     position: relative;
