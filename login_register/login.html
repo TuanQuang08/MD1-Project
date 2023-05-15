@@ -113,6 +113,11 @@
         .more i {
             margin-right: 4px;
         }
+        .error{
+            margin: 0;
+            font-size: 13px;
+            color: #fc2323;
+        }
     </style>
 </head>
 <body>
@@ -121,13 +126,15 @@
 
     <label for="username">Username</label>
     <input type="text" placeholder="Email or Phone" id="username">
+    <label class="error" id="validate_user"></label>
 
     <label for="password">Password</label>
     <input type="password" placeholder="Password" id="password">
+    <label class="error" id="validate_password"></label>
 
     <button class="btn-login" onclick="login()">Log In</button>
     <div class="more">
-        <button class="forgot-pass">Forgot Password</button>
+        <button class="forgot-pass" onclick="forgotPass()">Forgot Password</button>
         <button class="registration" onclick="window.location.href = 'registration.html'">Registration</button>
     </div>
 </div>

@@ -90,10 +90,12 @@ function LoginCheck() {
     let username = document.getElementById('username');
     let loginBtn = document.getElementById("login");
     let logoutBtn = document.getElementById("logout");
-    if(localStorage.getItem("username")){
-        username.innerHTML = "Hello, " + localStorage.getItem("username");
+    let signUpBtn = document.getElementById("signup");
+    if(localStorage.getItem("nameKey")){
+        username.innerHTML = "Welcome back, " + localStorage.getItem("nameKey");
         logoutBtn.style.display = 'inline-block';
         loginBtn.style.display = 'none';
+        signUpBtn.style.display = 'none';
     }else {
         loginBtn.style.display = 'inline-block';
         username.style.display = 'none';
@@ -105,18 +107,21 @@ function Logout() {
     let username = document.getElementById('username');
     let loginBtn = document.getElementById("login");
     let logoutBtn = document.getElementById("logout");
+    let signUpBtn = document.getElementById("signup");
     localStorage.removeItem('username');
     localStorage.removeItem('pass');
     loginBtn.style.display = 'inline-block';
+    signUpBtn.style.display = 'inline-block';
     username.style.display = 'none';
     logoutBtn.style.display = 'none';
+    localStorage.removeItem('nameKey');
 }
 
 // Hàm pop-up thanh toán
 function Pay() {
     let loginBtn = document.getElementById("login");
     if(loginBtn.style.display == 'inline-block'){
-        alert("Bạn chưa đăng nhập!!!");
+        alert("Login required!!!");
         return;
     }
     let popup = document.getElementById('popup');
@@ -135,4 +140,7 @@ function ClosePay() {
     let overlay = document.getElementById('overlay');
     popup.classList.remove("popup_open");
     overlay.classList.remove("overlay_open");
+    document.querySelector('#listItem').innerHTML = '';
+    document.querySelector('#total').innerHTML = "$0";
 }
+

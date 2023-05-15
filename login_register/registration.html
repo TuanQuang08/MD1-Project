@@ -6,6 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+
   <style>
     *,
     *:before,
@@ -49,7 +50,7 @@
 
     label{
       display: block;
-      margin-top: 30px;
+      margin-top: 20px;
       font-size: 16px;
       font-weight: 500;
     }
@@ -95,7 +96,13 @@
     .login-btn .login:hover{
       background-color: rgba(255,255,255,0.47);
     }
+    .error{
+      margin: 0;
+      font-size: 13px;
+      color: #fc2323;
+    }
 </style>
+  <script src="../js/User.js"></script>
 
 </head>
 <body>
@@ -104,12 +111,15 @@
 
   <label for="username">Username</label>
   <input type="text" placeholder="Email or Phone" id="username">
+  <label class="error" id="validate_user"></label>
 
   <label for="password">Password</label>
   <input type="password" placeholder="Password" id="password">
+  <label class="error" id="validate_password"></label>
 
   <label for="password">Confirm Password</label>
   <input type="password" placeholder="Confirm Password" id="confirmpassword">
+  <label class="error" id="validate_confirm_pass"></label>
 
   <button class="registration" onclick="register()">Registration</button>
   <div class="login-btn">
